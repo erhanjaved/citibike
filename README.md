@@ -1,4 +1,5 @@
 # Citi Bike Ride Analysis - September 2024
+## By Prashant Chopra & Erhan Asad Javed
  
 ## Project Overview
 This is an ongoing **data analytics project** analyzing Citi Bike ride data for September 2024. The goal of the project is to understand rider behavior, bike usage patterns, and pricing outcomes through a full analytics workflow that spans **data engineering, SQL analysis, and data visualization**.
