@@ -23,7 +23,7 @@ The raw data consists of Citi Bike trip data files hosted on [Google Drive](http
 - `202409-citibike-tripdata_4.csv`
 - `202409-citibike-tripdata_5.csv`
 
-The files are downloaded programmatically using `gdown` and stored locally in a `data/` directory.
+The files are downloaded programmatically using `gdown` and stored locally in a `data/` directory. Run the `data.ipynb` file to locally save the data (not added in the repository due to it exceeding the storage capacity.)
 
 
 ## Data Cleaning & Preprocessing
