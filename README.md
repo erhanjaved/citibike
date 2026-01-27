@@ -1,6 +1,10 @@
 # Citi Bike Ride Analysis
 ## Prashant Chopra & Erhan Asad Javed
 
+<div align="center">
+  <img src="img/logo.png" alt="intro" width="400">
+</div>
+
 ## Project Overview
 
 Citi Bike is New York City’s bike-sharing program, providing short-term bicycle rentals across the city. The system records detailed trip-level data, including ride duration, start and end locations, bike types, and rider membership status, making it a rich dataset for analyzing urban mobility patterns, user behavior, and transportation demand.
