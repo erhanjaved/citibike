@@ -17,14 +17,21 @@ As the project progresses, additional analysis will be conducted to explore temp
 ## Data Source
 The raw data consists of Citi Bike trip data files hosted on [Google Drive](https://drive.google.com/drive/folders/1NhBgnlArKS2kISV44Cl-JOexjGWTcllE). Each file represents a portion of September 2024 ride activity.
 
-**Raw files:**
+**Original files:**
 - `202409-citibike-tripdata_1.csv`
 - `202409-citibike-tripdata_2.csv`
 - `202409-citibike-tripdata_3.csv`
 - `202409-citibike-tripdata_4.csv`
 - `202409-citibike-tripdata_5.csv`
 
-The files are downloaded programmatically using `gdown` and stored locally in a `data/` directory. Run the `data.ipynb` file to locally save the data (not added in the repository due to it exceeding the storage capacity.)
+**Data Download**
+
+The files are downloaded programmatically using `gdown` and saved locally to `data/raw/` by running the Python script:
+
+```bash
+python -m src.download_and_combine
+```
+
 
 
 ## Data Cleaning & Preprocessing
