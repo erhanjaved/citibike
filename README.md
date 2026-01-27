@@ -1,4 +1,4 @@
-# Citi Bike Ride Analysis - September 2024
+# Citi Bike Ride Analysis
 ## By Prashant Chopra & Erhan Asad Javed
  
 ## Project Overview
