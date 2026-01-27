@@ -1,7 +1,10 @@
 # Citi Bike Ride Analysis
-## By Prashant Chopra & Erhan Asad Javed
- 
+## Prashant Chopra & Erhan Asad Javed
+
 ## Project Overview
+
+Citi Bike is New York City’s bike-sharing program, providing short-term bicycle rentals across the city. The system records detailed trip-level data, including ride duration, start and end locations, bike types, and rider membership status, making it a rich dataset for analyzing urban mobility patterns, user behavior, and transportation demand.
+
 This is an ongoing **data analytics project** analyzing Citi Bike ride data for September 2024. The goal of the project is to understand rider behavior, bike usage patterns, and pricing outcomes through a full analytics workflow that spans **data engineering, SQL analysis, and data visualization**.
 
 The project begins with downloading and cleaning raw Citi Bike trip data using Python, followed by feature engineering such as ride duration and per-ride price computation based on Citi Bike’s pricing rules. The cleaned dataset is then prepared for downstream analysis using **SQL** for querying and aggregation, and **Tableau** for interactive dashboards and visual insights.
