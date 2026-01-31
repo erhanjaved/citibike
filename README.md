@@ -108,3 +108,44 @@ The dataset contains no missing values and is ready for analysis.
 - numpy
 - gdown
 
+## 📊 SQL Findings: Citi Bike Usage & Revenue Analysis
+### Data Scope & Methodology
+
+Due to storage and performance limitations within Supabase (the PostgreSQL database used for querying), this analysis was conducted on a [20000-row subset](https://drive.google.com/drive/folders/1jVOpmbqFMiJbOy9i3ysy_7Luif6UVbtH) of the original Citi Bike dataset, which contains approximately 5 million records for the month. To reduce sampling bias, the subset was randomly selected across the entire month, ensuring representation from different days, times of day, rider types, and bike types. While smaller in scale, this randomized sample provides a highly representative snapshot of overall system behaviour and supports reliable exploratory analysis of usage and revenue patterns.
+
+### Key Findings (Summary)
+- Members account for ~80% of total trips but only ~56% of total revenue
+- Casual riders earn 2–4× more revenue per trip than members
+- Electric bikes generate nearly all system revenue
+- Evening and late-night hours are the most revenue-efficient
+- Morning commute periods are high-volume but low-value
+- Weekends favour casual riders and higher per-trip revenue
+- Peak utilization does not equal peak monetization
+
+### Rider Type Utilization vs. Revenue
+
+Member riders dominate overall usage, accounting for approximately 79% of trips, which aligns with frequent, routine commuting behavior. However, member trips contribute only ~56% of total revenue, reflecting a lower average revenue per trip. In contrast, casual riders represent only ~21% of total trips, yet generate ~44% of system revenue. This imbalance is primarily driven by longer trip durations and higher pricing exposure for casual riders.
+
+**Insight**: Members sustain system utilization, while casual riders disproportionately drive revenue.
+
+### Bike Type Performance
+
+Electric bikes account for the majority of trips (~66%) and generate the overwhelming share of total revenue. Classic bikes, while still used, contribute minimally to revenue. Notably, average trip duration is nearly identical between electric and classic bikes, indicating that revenue differences are driven by pricing structure rather than ride length.
+
+**Insight**: Electric bikes function as the system’s primary monetization lever.
+
+### Hourly Usage and Revenue Patterns
+
+Trip volume peaks during traditional commute windows (6–9 AM and 3–7 PM), driven largely by member riders. However, average revenue per trip is highest during late-night and early-morning hours (12–4 AM), when overall trip volume is lower. These off-peak periods are dominated by casual riders and higher-value trips.
+
+**Insight**: The most profitable trips occur outside peak demand hours.
+
+### Weekday vs. Weekend Dynamics
+
+Member usage is significantly higher on weekdays, consistent with commuter behavior, while both trip volume and revenue decline on weekends. Casual riders, however, exhibit slightly higher average trips per day on weekends, alongside the highest average revenue per trip across both weekday and weekend periods.
+
+**Insight**: Weekdays reflect commuter demand; weekends capture leisure-driven revenue.
+
+### Overall Conclusion
+
+Citi Bike’s usage patterns reveal a clear volume–value tradeoff. High-frequency member trips sustain daily utilization, while lower-frequency casual and electric bike trips disproportionately contribute to revenue. Peak trip volume does not align with peak revenue efficiency, highlighting opportunities for pricing optimization, fleet allocation, and demand-based strategy adjustments.
