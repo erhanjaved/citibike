@@ -158,12 +158,14 @@ To resolve these issues, the dataset was decomposed into separate relations for 
 
 This normalized schema reduces redundancy, improves data integrity, and enables flexible analytical queries across rider behavior, bike usage, station activity, and temporal patterns. The resulting structure was implemented in PostgreSQL using Supabase and served as the foundation for all subsequent SQL analysis and visualizations.
 
+### Entity Relationship Diagram
 <div align="center">
-  <img src="img/logo.png" alt="intro" width="400">
+  <img src="img/ERD.png" alt="intro" width="400">
 </div>
 
+### Relational Schema
 <div align="center">
-  <img src="img/logo.png" alt="intro" width="400">
+  <img src="img/RelationalSchema.png" alt="intro" width="400">
 </div>
 
 ## 📊 SQL Findings: Citi Bike Usage & Revenue Analysis
