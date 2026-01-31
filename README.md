@@ -108,6 +108,64 @@ The dataset contains no missing values and is ready for analysis.
 - numpy
 - gdown
 
+## 🗂️ Database Design & Normalization
+
+To support efficient querying and analysis, the original Citi Bike dataset was normalized and structured into a relational database. Prior to analysis, an Entity Relationship Diagram (ERD) was created to guide the database design and ensure proper normalization.
+
+### Normalization Rationale
+
+The initial dataset satisfies First Normal Form (1NF). All attributes contain atomic values, there are no repeating groups or multivalued attributes, and each record is uniquely identifiable by `ride_id`.
+
+The dataset also satisfies Second Normal Form (2NF). Since the primary key consists of a single attribute (`ride_id`), partial dependencies are not possible, and all non-key attributes are fully functionally dependent on the primary key.
+
+However, the dataset does not satisfy Third Normal Form (3NF) due to the presence of transitive dependencies. For example:
+
+- `start_station_id → station_name, station_latitude, station_longitude`
+- `end_station_id → station_name, station_latitude, station_longitude`
+
+Because `ride_id` determines the station IDs, and the station IDs in turn determine station attributes, these relationships introduce transitive dependencies that violate 3NF.
+
+Additionally, categorical attributes such as rider type (member vs. casual) and bike type (classic vs. electric) are repeated across a large number of records. Although these attributes are functionally dependent on ride_id, storing them directly in the ride table would result in unnecessary redundancy and reduced maintainability.
+
+To resolve these issues, the dataset was decomposed into separate relations for Ride, Station, Bike Type, and Rider Type. This decomposition ensures that all non-key attributes depend only on the primary key of their respective tables, thereby satisfying Third Normal Form (3NF).
+
+### Final Normalized Schema
+
+**Table**: `RIDE`
+- `ride_id (PK)`
+- `started_at`
+- `ended_at`
+- `start_station_id (FK → STATION.station_id)`
+- `end_station_id (FK → STATION.station_id)`
+- `bike_type_id (FK → BIKE_TYPE.bike_type_id)`
+- `rider_type_id (FK → RIDER_TYPE.rider_type_id)`
+
+**Table**: `STATION`
+- `station_id (PK)`
+- `station_name`
+- `station_latitude`
+- `station_longitude`
+
+**Table**: `BIKE_TYPE`
+- `bike_type_id (PK)`
+- `bike_type_name (e.g., classic_bike, electric_bike)`
+
+**Table**: `RIDER_TYPE`
+- `rider_type_id (PK)` 
+- `rider_type_name (e.g., member, casual)`
+
+### Design Outcome
+
+This normalized schema reduces redundancy, improves data integrity, and enables flexible analytical queries across rider behavior, bike usage, station activity, and temporal patterns. The resulting structure was implemented in PostgreSQL using Supabase and served as the foundation for all subsequent SQL analysis and visualizations.
+
+<div align="center">
+  <img src="img/logo.png" alt="intro" width="400">
+</div>
+
+<div align="center">
+  <img src="img/logo.png" alt="intro" width="400">
+</div>
+
 ## 📊 SQL Findings: Citi Bike Usage & Revenue Analysis
 ### Data Scope & Methodology
 
